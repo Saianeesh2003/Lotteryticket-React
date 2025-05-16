@@ -1,0 +1,310 @@
+/* Combined CSS for centering AND responsiveness */
+
+/* Force center alignment */
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #282c34;
+}
+
+/* Main lottery container */
+.lottery-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 500px;
+  width: 90%;
+  padding: 30px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Lottery title */
+.lottery-title {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 28px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Game info */
+.game-info {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Ticket digits container */
+.ticket-digits {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+/* Individual digit */
+.digit {
+  width: 60px;
+  height: 80px;
+  background: white;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #2c3e50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+/* Button styling */
+.lottery-button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+}
+
+.lottery-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(41, 128, 185, 0.4);
+}
+
+.lottery-button:active {
+  transform: translateY(1px);
+}
+
+/* Result messages */
+.win-message, .lose-message {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease-in;
+  text-align: center;
+}
+
+.win-message {
+  background-color: rgba(46, 204, 113, 0.2);
+  border: 2px solid #2ecc71;
+}
+
+.lose-message {
+  background-color: rgba(231, 76, 60, 0.2);
+  border: 2px solid #e74c3c;
+}
+
+.win-message h1, .lose-message h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.sum-display {
+  font-size: 16px;
+  color: #7f8c8d;
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media queries for responsiveness */
+
+/* Small mobile devices (less than 576px) */
+@media screen and (max-width: 575px) {
+  .lottery-container {
+    padding: 15px;
+    width: 95%;
+  }
+  
+  .lottery-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .game-info {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .digit {
+    width: 45px;
+    height: 60px;
+    font-size: 24px;
+    margin: 0 3px;
+  }
+  
+  .lottery-button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  .win-message, .lose-message {
+    padding: 15px;
+    margin: 20px auto;
+  }
+  
+  .win-message h1, .lose-message h1 {
+    font-size: 20px;
+  }
+  
+  .sum-display {
+    font-size: 14px;
+  }
+}
+
+/* Medium devices (tablets, 576px - 767px) */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .lottery-container {
+    padding: 20px;
+  }
+  
+  .lottery-title {
+    font-size: 24px;
+  }
+  
+  .digit {
+    width: 50px;
+    height: 70px;
+    font-size: 28px;
+  }
+}
+
+/* Medium-large devices (tablets, 768px - 991px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .lottery-container {
+    max-width: 600px;
+  }
+  
+  .digit {
+    width: 55px;
+    height: 75px;
+    font-size: 30px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  .lottery-container {
+    max-width: 700px;
+    padding: 40px;
+  }
+  
+  .lottery-title {
+    font-size: 32px;
+  }
+  
+  .game-info {
+    font-size: 18px;
+  }
+  
+  .digit {
+    width: 70px;
+    height: 90px;
+    font-size: 36px;
+    margin: 0 8px;
+  }
+  
+  .lottery-button {
+    padding: 15px 30px;
+    font-size: 20px;
+  }
+  
+  .win-message h1, .lose-message h1 {
+    font-size: 28px;
+  }
+  
+  .sum-display {
+    font-size: 18px;
+  }
+}
+
+/* For very large screens */
+@media screen and (min-width: 1200px) {
+  .lottery-container {
+    max-width: 800px;
+  }
+}
+
+/* For landscape orientation on mobile */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  #root {
+    padding: 20px 0;
+    align-items: flex-start;
+  }
+  
+  .lottery-container {
+    padding: 15px;
+  }
+  
+  .digit {
+    width: 40px;
+    height: 55px;
+    font-size: 22px;
+  }
+}
+
+/* For dark mode preference */
+@media (prefers-color-scheme: dark) {
+  body, html {
+    background-color: #121212;
+  }
+  
+  .lottery-container {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+  }
+  
+  .lottery-title, .digit {
+    color: #f5f5f5;
+  }
+  
+  .game-info, .sum-display {
+    color: #b0b0b0;
+  }
+  
+  .digit {
+    background-color: #2a2a2a;
+    border-color: #3498db;
+  }
+}
